@@ -38,27 +38,45 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
-
+// question 1
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
 
+const arrayLength = getLength(items, lengthOf => `The length of my array is: ${lengthOf}`);
+console.log(arrayLength);
+
+// question 2
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length - 1]);
 }
 
+// i am using the array items and an anonymous function as the arguments. these are passed into the function last into the parameter placeholders. cb performs logic of finding the last item, calls the anonymous function and uses what is returned in cb as the parameter lastItem.
+const lastTest = last(items, lastItem => `I want this: ${lastItem}`);
+console.log(lastTest);
+
+// question 3
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
 }
 
+// question 4
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
 
+// question 5
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  return cb(list.includes(item))
 }
+
+
 
 /* STRETCH PROBLEM */
 
